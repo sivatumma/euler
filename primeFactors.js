@@ -6,7 +6,8 @@
 */
 
 function primeFactors(n,result){
- for(var p=2; p<n/2; p++){
+ var p = result.length > 0 ? result[result.length-1] : 2;
+ for(; p<n/2; p++){
   if(isPrime(p)){
    var remainder = n%p, quotient = n/p;
    if(remainder == 0){
@@ -20,6 +21,7 @@ function primeFactors(n,result){
    }
   }
  }
+ if(result.length == 1) return "1 and this number itself, " + n;
 };
  
  var isPrime = function(n) {
